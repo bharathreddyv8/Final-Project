@@ -1,0 +1,51 @@
+{
+  "Logistic Regression": {
+    "Accuracy": 0.963,
+    "Precision": 0.9753593429158111,
+    "Recall": 0.95,
+    "F1 Score": 0.9625126646403243,
+    "ROC-AUC": 0.993956
+  },
+  "Decision Tree": {
+    "Accuracy": 0.985,
+    "Precision": 0.9859719438877755,
+    "Recall": 0.984,
+    "F1 Score": 0.984984984984985,
+    "ROC-AUC": 0.985
+  },
+  "Naive Bayes": {
+    "Accuracy": 0.963,
+    "Precision": 0.9714867617107943,
+    "Recall": 0.954,
+    "F1 Score": 0.9626639757820383,
+    "ROC-AUC": 0.990116
+  },
+  "Random Forest": {
+    "Accuracy": 0.988,
+    "Precision": 0.9939271255060729,
+    "Recall": 0.982,
+    "F1 Score": 0.9879275653923542,
+    "ROC-AUC": 0.99944
+  },
+  "XGBoost": {
+    "Accuracy": 0.988,
+    "Precision": 0.9919354838709677,
+    "Recall": 0.984,
+    "F1 Score": 0.9879518072289156,
+    "ROC-AUC": 0.9995639999999999
+  },
+  "Isolation Forest": {
+    "Accuracy": 0.654,
+    "Precision": 0.654,
+    "Recall": 0.654,
+    "F1 Score": 0.654,
+    "ROC-AUC": 0.708608
+  },
+  "Hybrid Model": {
+    "Accuracy": 0.988,
+    "Precision": 0.9919354838709677,
+    "Recall": 0.984,
+    "F1 Score": 0.9879518072289156,
+    "ROC-AUC": 0.9994040000000001
+  }
+}

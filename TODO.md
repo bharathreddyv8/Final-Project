@@ -1,17 +1,19 @@
-# Network/Graph-based Fraud Ring Detection Implementation
+# Git Upload Task - Steps to Complete
 
-## Backend Implementation
-- [x] 1. Create `backend/model/graph_model.py` - Graph data model
-- [x] 2. Create `backend/model/graph_algorithms.py` - Graph algorithms
-- [x] 3. Create `backend/model/graph_predictor.py` - Graph predictor integration
-- [ ] 4. Update `backend/app.py` - Add new API endpoints
-- [ ] 5. Update `backend/model/predict.py` - Integrate graph analysis
+## Approved Plan Steps:
+1. [x] Create TODO.md with steps
+2. [x] Verify Git status and current branch (main, ahead by 1 commit, TODO.md + others modified/untracked)
+3. [] git add . (stage all files)
+4. [] git commit -m "Add all project files: complete ML insurance fraud detection system with backend/frontend"
+5. [] git push -u origin main
+6. [] Verify upload success on GitHub
+7. [] Update TODO.md with completion
+8. [] Attempt task completion
 
-## Frontend Implementation
-- [ ] 6. Create `frontend/js/graph.js` - Graph visualization
-- [ ] 7. Update `frontend/index.html` - Add network analysis UI
-- [ ] 8. Update `frontend/js/app.js` - Add graph visualization logic
-
-## Followup Steps
-- [ ] Test graph algorithms with sample data
-- [ ] Validate fraud ring detection accuracy
+**Notes:**
+- User confirmed plan
+- Branch: main (confirmed)
+- Modified: TODO.md, backend/recent_predictions.json, frontend/js/metrics.js
+- Untracked: frontend/real_model_metrics.json
+- Will add all with git add .
+- Windows cmd.exe shell

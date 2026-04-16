@@ -19,18 +19,38 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 async function loadEvaluationMetrics() {
     try {
+        // Try to fetch from API first
         const response = await fetch(`${API_BASE_URL}/evaluation-metrics`);
         const data = await response.json();
         
         if (data.success && data.metrics) {
             displayMetrics(data.metrics);
             createMetricsChart(data.metrics);
-        } else {
-            showError('Evaluation metrics not available. Please train the model first.');
+            return;
         }
     } catch (error) {
+        console.log('API not available, loading from local file:', error);
+    }
+    
+    // Fallback: load from local file
+    try {
+        const response = await fetch('real_model_metrics.json');
+        const allMetrics = await response.json();
+        
+        // Use Hybrid Model metrics
+        const metrics = {
+            accuracy: allMetrics["Hybrid Model"]["Accuracy"],
+            precision: allMetrics["Hybrid Model"]["Precision"],
+            recall: allMetrics["Hybrid Model"]["Recall"],
+            f1_score: allMetrics["Hybrid Model"]["F1 Score"],
+            roc_auc: allMetrics["Hybrid Model"]["ROC-AUC"]
+        };
+        
+        displayMetrics(metrics);
+        createMetricsChart(metrics);
+    } catch (error) {
         console.error('Error loading evaluation metrics:', error);
-        showError('Failed to load evaluation metrics. Make sure the backend server is running.');
+        showError('Failed to load evaluation metrics. Make sure the backend server is running or check the local metrics file.');
     }
 }
 
