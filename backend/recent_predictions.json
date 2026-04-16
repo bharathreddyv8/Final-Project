@@ -1,0 +1,533 @@
+[
+  {
+    "claim_id": "CLM000000",
+    "timestamp": "2026-03-02T15:38:25.551708",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000001",
+    "timestamp": "2026-03-02T15:38:52.598170",
+    "prediction": "GENUINE",
+    "risk_score": 0.29775664221970016,
+    "claim_amount": 5000.0,
+    "provider_id": "PRV-HOSP-2750",
+    "patient_id": "PAT-F-1048"
+  },
+  {
+    "claim_id": "CLM000002",
+    "timestamp": "2026-03-02T15:38:52.598170",
+    "prediction": "GENUINE",
+    "risk_score": 0.4782771920417398,
+    "claim_amount": 50000.0,
+    "provider_id": "PRV-CLIN-8760",
+    "patient_id": "PAT-M-2051"
+  },
+  {
+    "claim_id": "CLM000003",
+    "timestamp": "2026-03-02T15:38:52.598170",
+    "prediction": "GENUINE",
+    "risk_score": 0.2991886902039309,
+    "claim_amount": 1500.0,
+    "provider_id": "PRV-INDV-0050",
+    "patient_id": "PAT-M-0777"
+  },
+  {
+    "claim_id": "CLM000004",
+    "timestamp": "2026-03-02T15:38:52.598170",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000005",
+    "timestamp": "2026-03-02T15:38:57.543013",
+    "prediction": "GENUINE",
+    "risk_score": 0.4782771920417398,
+    "claim_amount": 50000.0,
+    "provider_id": "PRV-CLIN-8760",
+    "patient_id": "PAT-M-2051"
+  },
+  {
+    "claim_id": "CLM000006",
+    "timestamp": "2026-03-02T20:38:47.163806",
+    "prediction": "GENUINE",
+    "risk_score": 0.29759864735598157,
+    "claim_amount": 2500.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000007",
+    "timestamp": "2026-03-02T20:46:11.057276",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000008",
+    "timestamp": "2026-03-02T22:08:08.042851",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000009",
+    "timestamp": "2026-03-02T22:08:59.630553",
+    "prediction": "GENUINE",
+    "risk_score": 0.29759864735598157,
+    "claim_amount": 2500.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000010",
+    "timestamp": "2026-03-02T22:21:44.418911",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000011",
+    "timestamp": "2026-03-02T22:24:36.425576",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000012",
+    "timestamp": "2026-03-02T22:24:43.530375",
+    "prediction": "GENUINE",
+    "risk_score": 0.29775753906143326,
+    "claim_amount": 250.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000013",
+    "timestamp": "2026-03-13T20:49:28.532537",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000014",
+    "timestamp": "2026-03-13T20:49:52.257356",
+    "prediction": "GENUINE",
+    "risk_score": 0.29775664221970016,
+    "claim_amount": 5000.0,
+    "provider_id": "PRV-HOSP-2750",
+    "patient_id": "PAT-F-1048"
+  },
+  {
+    "claim_id": "CLM000015",
+    "timestamp": "2026-03-13T20:49:52.257356",
+    "prediction": "GENUINE",
+    "risk_score": 0.4782771920417398,
+    "claim_amount": 50000.0,
+    "provider_id": "PRV-CLIN-8760",
+    "patient_id": "PAT-M-2051"
+  },
+  {
+    "claim_id": "CLM000016",
+    "timestamp": "2026-03-13T20:49:52.257356",
+    "prediction": "GENUINE",
+    "risk_score": 0.2991886902039309,
+    "claim_amount": 1500.0,
+    "provider_id": "PRV-INDV-0050",
+    "patient_id": "PAT-M-0777"
+  },
+  {
+    "claim_id": "CLM000017",
+    "timestamp": "2026-03-13T20:49:52.257356",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000018",
+    "timestamp": "2026-03-13T20:49:57.923250",
+    "prediction": "GENUINE",
+    "risk_score": 0.29775664221970016,
+    "claim_amount": 5000.0,
+    "provider_id": "PRV-HOSP-2750",
+    "patient_id": "PAT-F-1048"
+  },
+  {
+    "claim_id": "CLM000019",
+    "timestamp": "2026-03-14T09:57:30.277311",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000020",
+    "timestamp": "2026-03-14T12:00:07.741427",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000021",
+    "timestamp": "2026-04-07T19:18:42.843401",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000022",
+    "timestamp": "2026-04-07T19:19:11.736560",
+    "prediction": "GENUINE",
+    "risk_score": 0.29759864735598157,
+    "claim_amount": 2500.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000023",
+    "timestamp": "2026-04-07T19:19:42.159756",
+    "prediction": "GENUINE",
+    "risk_score": 0.29775664221970016,
+    "claim_amount": 5000.0,
+    "provider_id": "PRV-HOSP-2750",
+    "patient_id": "PAT-F-1048"
+  },
+  {
+    "claim_id": "CLM000024",
+    "timestamp": "2026-04-07T19:19:42.159756",
+    "prediction": "GENUINE",
+    "risk_score": 0.4782771920417398,
+    "claim_amount": 50000.0,
+    "provider_id": "PRV-CLIN-8760",
+    "patient_id": "PAT-M-2051"
+  },
+  {
+    "claim_id": "CLM000025",
+    "timestamp": "2026-04-07T19:19:42.159756",
+    "prediction": "GENUINE",
+    "risk_score": 0.2991886902039309,
+    "claim_amount": 1500.0,
+    "provider_id": "PRV-INDV-0050",
+    "patient_id": "PAT-M-0777"
+  },
+  {
+    "claim_id": "CLM000026",
+    "timestamp": "2026-04-07T19:19:42.159756",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000027",
+    "timestamp": "2026-04-07T19:19:48.358913",
+    "prediction": "GENUINE",
+    "risk_score": 0.29775664221970016,
+    "claim_amount": 5000.0,
+    "provider_id": "PRV-HOSP-2750",
+    "patient_id": "PAT-F-1048"
+  },
+  {
+    "claim_id": "CLM000028",
+    "timestamp": "2026-04-08T21:37:07.061993",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000029",
+    "timestamp": "2026-04-08T21:37:37.724906",
+    "prediction": "GENUINE",
+    "risk_score": 0.29759864735598157,
+    "claim_amount": 2500.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000030",
+    "timestamp": "2026-04-08T21:37:55.835363",
+    "prediction": "GENUINE",
+    "risk_score": 0.29775664221970016,
+    "claim_amount": 5000.0,
+    "provider_id": "PRV-HOSP-2750",
+    "patient_id": "PAT-F-1048"
+  },
+  {
+    "claim_id": "CLM000031",
+    "timestamp": "2026-04-08T21:37:55.835363",
+    "prediction": "GENUINE",
+    "risk_score": 0.4782771920417398,
+    "claim_amount": 50000.0,
+    "provider_id": "PRV-CLIN-8760",
+    "patient_id": "PAT-M-2051"
+  },
+  {
+    "claim_id": "CLM000032",
+    "timestamp": "2026-04-08T21:37:55.835363",
+    "prediction": "GENUINE",
+    "risk_score": 0.2991886902039309,
+    "claim_amount": 1500.0,
+    "provider_id": "PRV-INDV-0050",
+    "patient_id": "PAT-M-0777"
+  },
+  {
+    "claim_id": "CLM000033",
+    "timestamp": "2026-04-08T21:37:55.835363",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000034",
+    "timestamp": "2026-04-08T21:38:02.691298",
+    "prediction": "GENUINE",
+    "risk_score": 0.2991886902039309,
+    "claim_amount": 1500.0,
+    "provider_id": "PRV-INDV-0050",
+    "patient_id": "PAT-M-0777"
+  },
+  {
+    "claim_id": "CLM000035",
+    "timestamp": "2026-04-08T21:49:11.959897",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000036",
+    "timestamp": "2026-04-08T21:49:30.612369",
+    "prediction": "GENUINE",
+    "risk_score": 0.29759864735598157,
+    "claim_amount": 2500.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000037",
+    "timestamp": "2026-04-08T21:49:51.678438",
+    "prediction": "GENUINE",
+    "risk_score": 0.29775664221970016,
+    "claim_amount": 5000.0,
+    "provider_id": "PRV-HOSP-2750",
+    "patient_id": "PAT-F-1048"
+  },
+  {
+    "claim_id": "CLM000038",
+    "timestamp": "2026-04-08T21:49:51.678438",
+    "prediction": "GENUINE",
+    "risk_score": 0.4782771920417398,
+    "claim_amount": 50000.0,
+    "provider_id": "PRV-CLIN-8760",
+    "patient_id": "PAT-M-2051"
+  },
+  {
+    "claim_id": "CLM000039",
+    "timestamp": "2026-04-08T21:49:51.678438",
+    "prediction": "GENUINE",
+    "risk_score": 0.2991886902039309,
+    "claim_amount": 1500.0,
+    "provider_id": "PRV-INDV-0050",
+    "patient_id": "PAT-M-0777"
+  },
+  {
+    "claim_id": "CLM000040",
+    "timestamp": "2026-04-08T21:49:51.678438",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000041",
+    "timestamp": "2026-04-08T21:50:00.857303",
+    "prediction": "GENUINE",
+    "risk_score": 0.4782771920417398,
+    "claim_amount": 50000.0,
+    "provider_id": "PRV-CLIN-8760",
+    "patient_id": "PAT-M-2051"
+  },
+  {
+    "claim_id": "CLM000042",
+    "timestamp": "2026-04-08T22:06:40.767396",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000043",
+    "timestamp": "2026-04-08T22:07:08.863952",
+    "prediction": "GENUINE",
+    "risk_score": 0.29759864735598157,
+    "claim_amount": 2500.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000044",
+    "timestamp": "2026-04-08T22:07:33.267395",
+    "prediction": "GENUINE",
+    "risk_score": 0.29775664221970016,
+    "claim_amount": 5000.0,
+    "provider_id": "PRV-HOSP-2750",
+    "patient_id": "PAT-F-1048"
+  },
+  {
+    "claim_id": "CLM000045",
+    "timestamp": "2026-04-08T22:07:33.267395",
+    "prediction": "GENUINE",
+    "risk_score": 0.4782771920417398,
+    "claim_amount": 50000.0,
+    "provider_id": "PRV-CLIN-8760",
+    "patient_id": "PAT-M-2051"
+  },
+  {
+    "claim_id": "CLM000046",
+    "timestamp": "2026-04-08T22:07:33.267395",
+    "prediction": "GENUINE",
+    "risk_score": 0.2991886902039309,
+    "claim_amount": 1500.0,
+    "provider_id": "PRV-INDV-0050",
+    "patient_id": "PAT-M-0777"
+  },
+  {
+    "claim_id": "CLM000047",
+    "timestamp": "2026-04-08T22:07:33.267395",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000048",
+    "timestamp": "2026-04-08T22:07:46.268275",
+    "prediction": "GENUINE",
+    "risk_score": 0.2991886902039309,
+    "claim_amount": 1500.0,
+    "provider_id": "PRV-INDV-0050",
+    "patient_id": "PAT-M-0777"
+  },
+  {
+    "claim_id": "CLM000049",
+    "timestamp": "2026-04-08T22:17:20.467630",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000050",
+    "timestamp": "2026-04-08T22:18:28.943572",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000051",
+    "timestamp": "2026-04-08T22:19:31.385995",
+    "prediction": "GENUINE",
+    "risk_score": 0.29775664221970016,
+    "claim_amount": 5000.0,
+    "provider_id": "PRV-HOSP-2750",
+    "patient_id": "PAT-F-1048"
+  },
+  {
+    "claim_id": "CLM000052",
+    "timestamp": "2026-04-08T22:19:31.385995",
+    "prediction": "GENUINE",
+    "risk_score": 0.4782771920417398,
+    "claim_amount": 50000.0,
+    "provider_id": "PRV-CLIN-8760",
+    "patient_id": "PAT-M-2051"
+  },
+  {
+    "claim_id": "CLM000053",
+    "timestamp": "2026-04-08T22:19:31.385995",
+    "prediction": "GENUINE",
+    "risk_score": 0.2991886902039309,
+    "claim_amount": 1500.0,
+    "provider_id": "PRV-INDV-0050",
+    "patient_id": "PAT-M-0777"
+  },
+  {
+    "claim_id": "CLM000054",
+    "timestamp": "2026-04-08T22:19:31.385995",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000055",
+    "timestamp": "2026-04-16T22:01:19.136675",
+    "prediction": "FRAUD",
+    "risk_score": 0.991301244778172,
+    "claim_amount": 25000.0,
+    "provider_id": "PRV-HOSP-4398",
+    "patient_id": "PAT-M-1365"
+  },
+  {
+    "claim_id": "CLM000056",
+    "timestamp": "2026-04-16T22:01:35.898245",
+    "prediction": "GENUINE",
+    "risk_score": 0.29775664221970016,
+    "claim_amount": 5000.0,
+    "provider_id": "PRV-HOSP-2750",
+    "patient_id": "PAT-F-1048"
+  },
+  {
+    "claim_id": "CLM000057",
+    "timestamp": "2026-04-16T22:01:35.898245",
+    "prediction": "GENUINE",
+    "risk_score": 0.4782771920417398,
+    "claim_amount": 50000.0,
+    "provider_id": "PRV-CLIN-8760",
+    "patient_id": "PAT-M-2051"
+  },
+  {
+    "claim_id": "CLM000058",
+    "timestamp": "2026-04-16T22:01:35.898245",
+    "prediction": "GENUINE",
+    "risk_score": 0.2991886902039309,
+    "claim_amount": 1500.0,
+    "provider_id": "PRV-INDV-0050",
+    "patient_id": "PAT-M-0777"
+  }
+]

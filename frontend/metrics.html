@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Evaluation Metrics - Fraud Detection System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/metrics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                    <div>
+                        <h1>Model Evaluation Metrics</h1>
+                        <p class="subtitle">Performance Analysis & Validation</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="index.html" class="btn btn-secondary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content metrics-page">
+        <div class="container">
+            <!-- Overview Section -->
+            <div class="metrics-overview">
+                <div class="overview-card">
+                    <h2>Model Performance Overview</h2>
+                    <p>Comprehensive evaluation metrics for the Hybrid Fraud Detection Model (XGBoost + Isolation Forest)</p>
+                </div>
+            </div>
+
+            <!-- Metrics Grid -->
+            <div class="metrics-dashboard">
+                <!-- Accuracy Card -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon accuracy-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Accuracy</h3>
+                            <p class="metric-subtitle">Overall Correctness</p>
+                        </div>
+                    </div>
+                    <div class="metric-value-large" id="accuracyValue">--</div>
+                    <div class="metric-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill accuracy-fill" id="accuracyBar"></div>
+                        </div>
+                    </div>
+                    <div class="metric-description">
+                        Percentage of correct predictions (both fraud and genuine) out of all predictions made.
+                    </div>
+                    <div class="metric-formula">
+                        <strong>Formula:</strong> (TP + TN) / (TP + TN + FP + FN)
+                    </div>
+                </div>
+
+                <!-- Precision Card -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon precision-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Precision</h3>
+                            <p class="metric-subtitle">Positive Predictive Value</p>
+                        </div>
+                    </div>
+                    <div class="metric-value-large" id="precisionValue">--</div>
+                    <div class="metric-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill precision-fill" id="precisionBar"></div>
+                        </div>
+                    </div>
+                    <div class="metric-description">
+                        Of all claims predicted as fraud, what percentage were actually fraudulent?
+                    </div>
+                    <div class="metric-formula">
+                        <strong>Formula:</strong> TP / (TP + FP)
+                    </div>
+                </div>
+
+                <!-- Recall Card -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon recall-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Recall</h3>
+                            <p class="metric-subtitle">Sensitivity / True Positive Rate</p>
+                        </div>
+                    </div>
+                    <div class="metric-value-large" id="recallValue">--</div>
+                    <div class="metric-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill recall-fill" id="recallBar"></div>
+                        </div>
+                    </div>
+                    <div class="metric-description">
+                        Of all actual fraudulent claims, what percentage did the model successfully detect?
+                    </div>
+                    <div class="metric-formula">
+                        <strong>Formula:</strong> TP / (TP + FN)
+                    </div>
+                </div>
+
+                <!-- F1-Score Card -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon f1-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>F1-Score</h3>
+                            <p class="metric-subtitle">Harmonic Mean of Precision & Recall</p>
+                        </div>
+                    </div>
+                    <div class="metric-value-large" id="f1Value">--</div>
+                    <div class="metric-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill f1-fill" id="f1Bar"></div>
+                        </div>
+                    </div>
+                    <div class="metric-description">
+                        Balanced measure that combines precision and recall into a single metric.
+                    </div>
+                    <div class="metric-formula">
+                        <strong>Formula:</strong> 2 × (Precision × Recall) / (Precision + Recall)
+                    </div>
+                </div>
+
+                <!-- ROC-AUC Card -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-icon auc-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>ROC-AUC</h3>
+                            <p class="metric-subtitle">Area Under ROC Curve</p>
+                        </div>
+                    </div>
+                    <div class="metric-value-large" id="aucValue">--</div>
+                    <div class="metric-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill auc-fill" id="aucBar"></div>
+                        </div>
+                    </div>
+                    <div class="metric-description">
+                        Measures the model's ability to distinguish between fraudulent and genuine claims.
+                    </div>
+                    <div class="metric-formula">
+                        <strong>Interpretation:</strong> 1.0 = Perfect, 0.5 = Random, <0.5 = Worse than random
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Section -->
+            <div class="charts-section">
+                <div class="chart-card">
+                    <h3>Performance Metrics Comparison</h3>
+                    <canvas id="metricsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Technical Details -->
+            <div class="technical-details">
+                <div class="detail-card">
+                    <h3>📊 Dataset Information</h3>
+                    <div class="detail-content">
+                        <div class="detail-item">
+                            <span class="detail-label">Total Samples:</span>
+                            <span class="detail-value">5,000 claims</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Training Set:</span>
+                            <span class="detail-value">4,000 claims (80%)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Test Set:</span>
+                            <span class="detail-value">1,000 claims (20%)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Class Distribution:</span>
+                            <span class="detail-value">50% Fraud / 50% Genuine</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h3>🤖 Model Architecture</h3>
+                    <div class="detail-content">
+                        <div class="detail-item">
+                            <span class="detail-label">Primary Model:</span>
+                            <span class="detail-value">XGBoost Classifier (70% weight)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Secondary Model:</span>
+                            <span class="detail-value">Isolation Forest (30% weight)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Hybrid Approach:</span>
+                            <span class="detail-value">Weighted combination</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Decision Threshold:</span>
+                            <span class="detail-value">0.5 (50%)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <h3>🎯 Feature Engineering</h3>
+                    <div class="detail-content">
+                        <div class="detail-item">
+                            <span class="detail-label">Total Features:</span>
+                            <span class="detail-value">13 features</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Preprocessing:</span>
+                            <span class="detail-value">StandardScaler normalization</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Explainability:</span>
+                            <span class="detail-value">SHAP values</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Cross-validation:</span>
+                            <span class="detail-value">Stratified split</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Confusion Matrix Legend -->
+            <div class="confusion-matrix-section">
+                <div class="matrix-card">
+                    <h3>Understanding the Metrics</h3>
+                    <div class="matrix-explanation">
+                        <div class="matrix-term">
+                            <div class="term-badge tp">TP</div>
+                            <div class="term-content">
+                                <strong>True Positive:</strong> Correctly identified fraud cases
+                            </div>
+                        </div>
+                        <div class="matrix-term">
+                            <div class="term-badge tn">TN</div>
+                            <div class="term-content">
+                                <strong>True Negative:</strong> Correctly identified genuine cases
+                            </div>
+                        </div>
+                        <div class="matrix-term">
+                            <div class="term-badge fp">FP</div>
+                            <div class="term-content">
+                                <strong>False Positive:</strong> Genuine claims incorrectly flagged as fraud (Type I Error)
+                            </div>
+                        </div>
+                        <div class="matrix-term">
+                            <div class="term-badge fn">FN</div>
+                            <div class="term-content">
+                                <strong>False Negative:</strong> Fraudulent claims missed by the model (Type II Error)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Academic Project by <strong>Bharath Kumar</strong> | Real-Time Medical Insurance Fraud Detection using Hybrid ML Models</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/metrics.js"></script>
+</body>
+</html>

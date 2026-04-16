@@ -1,0 +1,5 @@
+age,gender,claim_amount,hospital_stay_days,previous_claims,treatment_type,provider_type,diagnosis_code,procedure_code,chronic_condition,insurance_type,policy_age_days,beneficiaries
+35,0,5000.00,3,1,0,0,250,2500,0,1,1000,2
+65,1,50000.00,15,8,2,1,780,8500,1,2,2000,1
+25,1,1500.00,1,0,0,2,150,1200,0,0,300,4
+45,1,25000.00,5,3,1,0,450,5678,0,1,730,3

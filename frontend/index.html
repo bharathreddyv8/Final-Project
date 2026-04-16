@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Insurance Fraud Detection System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <div>
+                        <h1>Medical Insurance Fraud Detection</h1>
+                        <p class="subtitle">Real-Time AI-Powered Analysis</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="metrics.html" class="btn btn-primary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        View Metrics
+                    </a>
+                    <button class="btn btn-secondary" onclick="showAdminDashboard()">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        Admin Dashboard
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab('single', event)">Single Claim Analysis</button>
+                <button class="tab-btn" onclick="switchTab('batch', event)">Batch Processing</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Single Claim Tab Content -->
+            <div id="singleTab" class="tab-content active">
+                <div class="content-grid">
+                <!-- Left Column - Input Form -->
+                <div class="card form-card">
+                    <div class="card-header">
+                        <h2>Submit Insurance Claim</h2>
+                        <p>Enter claim details for real-time fraud analysis</p>
+                    </div>
+                    <div class="card-body">
+                        <form id="claimForm">
+                            <!-- Patient Information -->
+                            <div class="form-section">
+                                <h3>Patient Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="age">Age <span class="required">*</span></label>
+                                        <input type="number" id="age" name="age" min="18" max="120" value="45" required>
+                                        <small>Patient age (18-120 years)</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gender">Gender <span class="required">*</span></label>
+                                        <select id="gender" name="gender" required>
+                                            <option value="0">Female</option>
+                                            <option value="1" selected>Male</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="patient_email">Patient Email (optional)</label>
+                                        <input type="email" id="patient_email" name="patient_email" placeholder="patient@example.com">
+                                        <small>Enter an email to receive approval notification (optional)</small>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="chronic_condition">Chronic Condition <span class="required">*</span></label>
+                                        <select id="chronic_condition" name="chronic_condition" required>
+                                            <option value="0" selected>No</option>
+                                            <option value="1">Yes</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="beneficiaries">Beneficiaries <span class="required">*</span></label>
+                                        <input type="number" id="beneficiaries" name="beneficiaries" min="1" max="20" value="3" required>
+                                        <small>Number of beneficiaries</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Claim Details -->
+                            <div class="form-section">
+                                <h3>Claim Details</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="claim_amount">Claim Amount ($) <span class="required">*</span></label>
+                                        <input type="number" id="claim_amount" name="claim_amount" min="1" step="0.01" value="25000" required>
+                                        <small>Total claim amount</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="hospital_stay_days">Hospital Stay (days) <span class="required">*</span></label>
+                                        <input type="number" id="hospital_stay_days" name="hospital_stay_days" min="0" max="365" value="5" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="previous_claims">Previous Claims <span class="required">*</span></label>
+                                        <input type="number" id="previous_claims" name="previous_claims" min="0" value="3" required>
+                                        <small>Number of previous claims</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="treatment_type">Treatment Type <span class="required">*</span></label>
+                                        <select id="treatment_type" name="treatment_type" required>
+                                            <option value="0">Outpatient</option>
+                                            <option value="1" selected>Inpatient</option>
+                                            <option value="2">Emergency</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Medical Codes -->
+                            <div class="form-section">
+                                <h3>Medical Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="diagnosis_code">Diagnosis Code <span class="required">*</span></label>
+                                        <input type="number" id="diagnosis_code" name="diagnosis_code" min="100" max="999" value="450" required>
+                                        <small>ICD code (100-999)</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="procedure_code">Procedure Code <span class="required">*</span></label>
+                                        <input type="number" id="procedure_code" name="procedure_code" min="1000" max="9999" value="5678" required>
+                                        <small>CPT code (1000-9999)</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Provider & Policy -->
+                            <div class="form-section">
+                                <h3>Provider & Policy Information</h3>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="provider_type">Provider Type <span class="required">*</span></label>
+                                        <select id="provider_type" name="provider_type" required>
+                                            <option value="0" selected>Hospital</option>
+                                            <option value="1">Clinic</option>
+                                            <option value="2">Individual</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="insurance_type">Insurance Type <span class="required">*</span></label>
+                                        <select id="insurance_type" name="insurance_type" required>
+                                            <option value="0">Basic</option>
+                                            <option value="1" selected>Premium</option>
+                                            <option value="2">Gold</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group full-width">
+                                        <label for="policy_age_days">Policy Age (days) <span class="required">*</span></label>
+                                        <input type="number" id="policy_age_days" name="policy_age_days" min="1" value="730" required>
+                                        <small>Days since policy started</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-secondary" onclick="resetForm()">Reset Form</button>
+                                <button type="submit" class="btn btn-primary" id="submitBtn">
+                                    <span class="btn-text">Analyze Claim</span>
+                                    <span class="btn-loading" style="display: none;">
+                                        <span class="spinner"></span>
+                                        Analyzing...
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Column - Results -->
+                <div class="results-column">
+                    <!-- Prediction Result Card -->
+                    <div class="card result-card" id="resultCard" style="display: none;">
+                        <div class="card-header">
+                            <h2>Analysis Result</h2>
+                        </div>
+                        <div class="card-body">
+                            <!-- Main Result Badge -->
+                            <div class="result-badge" id="resultBadge">
+                                <div class="badge-icon" id="badgeIcon"></div>
+                                <div class="badge-text">
+                                    <h3 id="predictionResult">--</h3>
+                                    <p id="confidenceText">--</p>
+                                </div>
+                            </div>
+
+                            <!-- Risk Score Meter -->
+                            <div class="risk-meter">
+                                <div class="meter-header">
+                                    <span>Risk Score</span>
+                                    <span class="risk-value" id="riskValue">--</span>
+                                </div>
+                                <div class="meter-bar">
+                                    <div class="meter-fill" id="meterFill"></div>
+                                </div>
+                                <div class="meter-labels">
+                                    <span>Low</span>
+                                    <span>Medium</span>
+                                    <span>High</span>
+                                    <span>Critical</span>
+                                </div>
+                            </div>
+
+                            <!-- Model Outputs -->
+                            <div class="model-outputs">
+                                <div class="model-output">
+                                    <div class="output-header">
+                                        <div class="output-label">
+                                            <span>XGBoost Probability</span>
+                                            <button class="info-btn" onclick="showTooltip('xgboost')">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <circle cx="12" cy="12" r="10"/>
+                                                    <line x1="12" y1="16" x2="12" y2="12"/>
+                                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="output-value" id="xgboostValue">--</div>
+                                    </div>
+                                    <div class="output-bar">
+                                        <div class="output-bar-fill xgboost-bar" id="xgboostBar"></div>
+                                    </div>
+                                    <div class="output-explanation">
+                                        <strong>Supervised Learning:</strong> Trained on labeled fraud cases.
+                                        <span id="xgboostInterpretation"></span>
+                                    </div>
+                                </div>
+                                <div class="model-output">
+                                    <div class="output-header">
+                                        <div class="output-label">
+                                            <span>Isolation Forest Score</span>
+                                            <button class="info-btn" onclick="showTooltip('isoforest')">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                                    <circle cx="12" cy="12" r="10"/>
+                                                    <line x1="12" y1="16" x2="12" y2="12"/>
+                                                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="output-value" id="isoforestValue">--</div>
+                                    </div>
+                                    <div class="output-bar">
+                                        <div class="output-bar-fill isoforest-bar" id="isoforestBar"></div>
+                                    </div>
+                                    <div class="output-explanation">
+                                        <strong>Anomaly Detection:</strong> Finds unusual patterns in data.
+                                        <span id="isoforestInterpretation"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Model Explanation Box -->
+                            <div class="hybrid-explanation">
+                                <div class="hybrid-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                </div>
+                                <div class="hybrid-text">
+                                    <strong>Hybrid Decision:</strong> Final prediction combines both models (70% XGBoost + 30% Isolation Forest) for maximum accuracy.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Explanation Card -->
+                    <div class="card explanation-card" id="explanationCard" style="display: none;">
+                        <div class="card-header">
+                            <h2>Why This Prediction?</h2>
+                            <p>Top contributing factors (SHAP values)</p>
+                        </div>
+                        <div class="card-body">
+                            <!-- Feature Chart -->
+                            <div class="chart-container">
+                                <canvas id="explanationChart"></canvas>
+                            </div>
+                            
+                            <!-- Feature Details -->
+                            <div class="feature-details" id="featureDetails"></div>
+                            
+                            <!-- Summary -->
+                            <div class="explanation-summary" id="explanationSummary"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Tab Content -->
+        </div>
+
+        <!-- Batch Processing Tab Content -->
+        <div id="batchTab" class="tab-content">
+            <div class="batch-processing">
+                <div class="batch-header">
+                    <h2>Batch Claim Processing</h2>
+                    <p>Upload a CSV file or paste JSON data to analyze multiple claims at once</p>
+                </div>
+                
+                <div class="batch-input-section">
+                    <div class="batch-input-tabs">
+                        <button class="batch-tab-btn active" onclick="switchBatchInput('file', event)">Upload CSV</button>
+                        <button class="batch-tab-btn" onclick="switchBatchInput('json', event)">Paste JSON</button>
+                    </div>
+                    
+                    <!-- CSV Upload -->
+                    <div id="fileInput" class="batch-input-content active">
+                        <div class="file-upload-area">
+                            <input type="file" id="csvFile" accept=".csv" style="display: none;">
+                            <div class="upload-zone" onclick="document.getElementById('csvFile').click()">
+                                <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                                </svg>
+                                <p>Click to upload CSV file</p>
+                                <small>Maximum 1000 claims per batch</small>
+                            </div>
+                        </div>
+                        <div class="file-info" id="fileInfo" style="display: none;">
+                            <p id="fileName"></p>
+                            <p id="fileSize"></p>
+                        </div>
+                    </div>
+                    
+                    <!-- JSON Input -->
+                    <div id="jsonInput" class="batch-input-content">
+                        <textarea id="jsonData" placeholder='Paste your JSON data here. Format: [{"age": 45, "gender": 1, ...}, ...]' rows="10"></textarea>
+                        <small>Example: Array of claim objects in JSON format</small>
+                    </div>
+                </div>
+                
+                <div class="batch-actions">
+                    <button class="btn btn-secondary" onclick="clearBatchData()">Clear Data</button>
+                    <button class="btn btn-primary" onclick="processBatch()" id="processBatchBtn">
+                        <span class="btn-text">Process Batch</span>
+                        <span class="btn-loading" style="display: none;">
+                            <span class="spinner"></span>
+                            Processing...
+                        </span>
+                    </button>
+                </div>
+                
+                <!-- Batch Results -->
+                <div class="batch-results" id="batchResults" style="display: none;">
+                    <div class="batch-summary">
+                        <h3>Batch Processing Summary</h3>
+                        <div class="summary-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Total Claims:</span>
+                                <span class="stat-value" id="totalClaims">--</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Processed:</span>
+                                <span class="stat-value" id="processedClaims">--</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Failed:</span>
+                                <span class="stat-value" id="failedClaims">--</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Fraud Detected:</span>
+                                <span class="stat-value fraud" id="fraudCount">--</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Fraud Rate:</span>
+                                <span class="stat-value" id="batchFraudRate">--</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="batch-table-container">
+                        <table class="batch-results-table" id="batchTable">
+                            <thead>
+                                <tr>
+                                    <th>Claim #</th>
+                                    <th>Status</th>
+                                    <th>Prediction</th>
+                                    <th>Risk Score</th>
+                                    <th>Confidence</th>
+                                    <th>Claim Amount</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="batchTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="batch-export">
+                        <button class="btn btn-secondary" onclick="exportBatchResults()">Export Results (CSV)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <!-- Admin Dashboard Modal -->
+    <div class="modal" id="adminModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Admin Dashboard</h2>
+                <button class="modal-close" onclick="closeAdminDashboard()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Statistics -->
+                <div class="stats-grid" id="statsGrid">
+                    <div class="stat-card">
+                        <div class="stat-label">Total Predictions</div>
+                        <div class="stat-value" id="statTotal">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Fraud Detected</div>
+                        <div class="stat-value fraud" id="statFraud">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Genuine Claims</div>
+                        <div class="stat-value genuine" id="statGenuine">--</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Fraud Rate</div>
+                        <div class="stat-value" id="statFraudRate">--</div>
+                    </div>
+                </div>
+
+                <!-- Recent Predictions Table -->
+                <div class="table-container">
+                    <h3>Recent Predictions</h3>
+                    <table class="predictions-table">
+                        <thead>
+                            <tr>
+                                <th>Claim ID</th>
+                                <th>Timestamp</th>
+                                <th>Claim Amount</th>
+                                <th>Risk Score</th>
+                                <th>Decision</th>
+                            </tr>
+                        </thead>
+                        <tbody id="predictionsTableBody">
+                            <tr>
+                                <td colspan="5" class="no-data">No predictions yet</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="filter-controls" id="filterControls">
+                    <h3>Filter Predictions</h3>
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="filterDateFrom">From Date:</label>
+                            <input type="date" id="filterDateFrom" class="filter-input">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterDateTo">To Date:</label>
+                            <input type="date" id="filterDateTo" class="filter-input">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterPrediction">Prediction:</label>
+                            <select id="filterPrediction" class="filter-input">
+                                <option value="">All</option>
+                                <option value="FRAUD">Fraud Only</option>
+                                <option value="GENUINE">Genuine Only</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-secondary" onclick="applyFilters()">Apply Filters</button>
+                        <button class="btn btn-secondary" onclick="clearFilters()">Clear</button>
+                        <button class="btn btn-primary" onclick="exportFilteredCSV()">Export Filtered CSV</button>
+                        <button class="btn btn-danger" onclick="clearHistory()">Clear History</button>
+                    </div>
+                </div>
+
+
+
+
+    <!-- Model Info Tooltip Modal -->
+    <div class="tooltip-modal" id="tooltipModal" onclick="closeTooltip()">
+        <div class="tooltip-content" onclick="event.stopPropagation()">
+            <button class="tooltip-close" onclick="closeTooltip()">&times;</button>
+            <div id="tooltipBody"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Academic Project by <strong>Bharath Kumar</strong> | Real-Time Medical Insurance Fraud Detection using Hybrid ML Models (XGBoost + Isolation Forest)</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/app.js?v=20260302-2"></script>
+</body>
+</html>
